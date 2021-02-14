@@ -15,6 +15,8 @@ export async function fetchAPYs (): Promise<APY[]> {
       tokenaddress: entry.gsx$tokenaddress.$t,
       priceusd: entry.gsx$priceusd.$t,
       marketcapusd: entry.gsx$marketcapusd.$t,
+      title: entry.title.$t,
+      imagelink: entry.gsx$imagelink.$t
     })
   })
 

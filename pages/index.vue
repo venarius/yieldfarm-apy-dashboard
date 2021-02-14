@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="container mx-auto">
     <loader />
-    {{ APYs }}
+    <div v-if="APYs.length > 0">
+      <apy-card v-for="(apy, index) in APYs" :key="index" :apy="apy" class="mb-2" />
+    </div>
   </div>
 </template>
 
@@ -15,6 +17,9 @@ export default Vue.extend({
   computed: {
     APYs (): APY[] {
       return this.$store.state.apy.APYs
+    },
+    isLoading (): boolean {
+      return this.$store.state.apy.isLoading
     }
   },
   async mounted () {

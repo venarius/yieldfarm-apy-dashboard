@@ -5,5 +5,7 @@ export interface APY {
   website: string,
   tokenaddress: string,
   priceusd: string,
-  marketcapusd: string
+  marketcapusd: string,
+  title: string,
+  imagelink: string
 }
