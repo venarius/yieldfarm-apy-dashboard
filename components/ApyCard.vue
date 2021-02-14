@@ -1,8 +1,9 @@
 <template>
-  <div class="border border-gray-400 p-2 shadow rounded">
+  <div class="border border-gray-300 p-4 shadow rounded-lg">
     <div class="flex items-center">
       <img :src="`https://bscscan.com/token/images/${apy.imagelink}`">
       <p class="text-lg ml-1">{{ apy.title }}</p>
+      {{ apy.balance }}
     </div>
   </div>
 </template>

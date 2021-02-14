@@ -7,5 +7,7 @@ export interface APY {
   priceusd: string,
   marketcapusd: string,
   title: string,
-  imagelink: string
+  imagelink: string,
+
+  balance?: string
 }
