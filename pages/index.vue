@@ -11,12 +11,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import { APY } from '../apy/models'
 import { fetchAPYs } from '../apy/fetcher'
 
 export default Vue.extend({
   computed: {
-    APYs (): APY[] {
+    APYs (): any[] {
       return this.$store.state.apy.APYs
     },
     isLoading (): boolean {
@@ -24,7 +23,7 @@ export default Vue.extend({
     }
   },
   async mounted () {
-    const apys: APY[] = await fetchAPYs()
+    const apys: any[] = await fetchAPYs()
     this.$store.commit('apy/setAPYs', apys)
     this.$store.commit('apy/setIsLoading', false)
   }
