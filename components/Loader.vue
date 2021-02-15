@@ -1,6 +1,6 @@
 <template>
-  <div v-if="isLoading" class="fixed inset-0 bg-black z-10 flex items-center justify-center">
-    <div class="lds-ripple"><div></div><div></div></div>
+  <div v-if="isLoading" class="fixed inset-0 z-10 flex items-center bg-white justify-center">
+    <div class="lds-ripple relative"><div></div><div></div></div>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default Vue.extend({
 }
 .lds-ripple div {
   position: absolute;
-  border: 4px solid #fff;
+  border: 4px solid #aaa;
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
