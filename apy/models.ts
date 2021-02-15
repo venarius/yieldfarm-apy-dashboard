@@ -11,3 +11,9 @@ export interface APY {
 
   balance?: string
 }
+
+export interface Call {
+  address: string
+  name: string
+  params?: any[]
+}

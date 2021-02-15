@@ -1,7 +1,10 @@
 import { APY } from './models'
 import { getBalanceForContract } from './web3'
+import { fetchFarms } from './fetchFarms'
 
 export async function fetchAPYs (): Promise<APY[]> {
+  (window as any).fetchFarms = fetchFarms
+
   const out: APY[] = []
 
   const res = await fetch('https://spreadsheets.google.com/feeds/list/1LjyKYpILDGv-YCOoBFZNUI184NT1y67khXiqXA3Yhxs/1/public/full?alt=json')
