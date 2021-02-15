@@ -1,5 +1,7 @@
 # ApyDashboard
 
+Made with ❤️ from scratch for Binance Hackathon: The Future is now
+
 ## Build Setup
 
 ```bash
@@ -17,4 +19,12 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+# Features
+- Live Updates: Updates every 60 seconds
+- History: See history APYs for the last 30 days (better than the yieldfarms section on coinmarketcap)
+- Responsive: Also works perfectly on mobile devices
+- Calculator: Calculate earnings for different farms
+- Translated into multiple languages (currently 2)
+- Sorting options & compare options
+- Supports multiple different "farm provider"
+- Search: Quickly search for a specific farm

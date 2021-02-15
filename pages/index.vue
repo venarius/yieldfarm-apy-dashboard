@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <loader />
     <div v-if="APYs.length > 0">
-      <p class="text-2xl font-semibold text-gray-800 text-center my-8">APY live dashboard</p>
+      <p class="text-2xl font-semibold text-gray-800 text-center mb-8">APY live dashboard</p>
       <apy-card v-for="(apy, index) in APYs" :key="index" :apy="apy" class="mb-2" />
     </div>
   </div>
