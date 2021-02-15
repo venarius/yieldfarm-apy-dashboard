@@ -3,9 +3,10 @@ import erc20 from '../config/abi/erc20'
 import masterchefABI from '../config/abi/masterchef'
 import { multicall } from './web3'
 import farmsConfig from '../config/constants/farms'
+import { getApyForFarms } from './helpers'
 
 function getAddress(address: any) {
-  return address[57]
+  return address[56]
 }
 
 export async function fetchFarms () {
@@ -98,5 +99,6 @@ export async function fetchFarms () {
       }
     }),
   )
-  return data
+
+  return getApyForFarms(data)
 }

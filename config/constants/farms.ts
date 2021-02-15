@@ -1,6 +1,6 @@
 import contracts from './contracts'
 
-enum QuoteToken {
+export enum QuoteToken {
   'BNB' = 'BNB',
   'CAKE' = 'CAKE',
   'SYRUP' = 'SYRUP',

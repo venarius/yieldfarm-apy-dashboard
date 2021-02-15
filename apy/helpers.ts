@@ -1,3 +1,8 @@
+import BigNumber from 'bignumber.js'
+
+import { BLOCKS_PER_YEAR, POOL_PID, YIELD_PER_BLOCK } from './config'
+import { QuoteToken } from '../config/constants/farms'
+
 function roundToTwoDp (number: number): number { return Math.round(number * 100) / 100 }
 
 export function calculateEarnedPerThousandDollars ({ numberOfDays, farmApy, price }: any): number {
@@ -20,4 +25,27 @@ export function calculateEarnedPerThousandDollars ({ numberOfDays, farmApy, pric
 export function apyModalRoi ({ amountEarned, amountInvested }: any): string {
   const percentage = (amountEarned / amountInvested) * 100
   return percentage.toFixed(2)
+}
+
+export function getApyForFarms (farms: any): any[] {
+  const PriceVsBNB = new BigNumber(farms.find((fa: any) => fa.pid === POOL_PID)?.tokenPriceVsQuote || 0)
+
+  const price = new BigNumber(farms.find((fa: any) => fa.pid === 1)?.tokenPriceVsQuote || 0)
+  const bnbPrice = new BigNumber(farms.find((fa: any) => fa.pid === 2)?.tokenPriceVsQuote || 0)
+  const ethPriceUsd = new BigNumber(farms.find((fa: any) => fa.pid === 14)?.tokenPriceVsQuote || 0)
+
+  return farms.map((farm: any) => {
+    const rewardPerBlock = YIELD_PER_BLOCK.times(farm.poolWeight)
+    const rewardPerYear = rewardPerBlock.times(BLOCKS_PER_YEAR)
+
+    let apy = PriceVsBNB.times(rewardPerYear).div(farm.lpTotalInQuoteToken)
+
+    if (farm.quoteTokenSymbol === QuoteToken.BUSD || farm.quoteTokenSymbol === QuoteToken.UST) {
+      apy = PriceVsBNB.times(rewardPerYear).div(farm.lpTotalInQuoteToken).times(bnbPrice)
+    } else if (farm.quoteTokenSymbol === QuoteToken.ETH) {
+      apy = price.div(ethPriceUsd).times(rewardPerYear).div(farm.lpTotalInQuoteToken)
+    }
+
+    return { ...farm, ...{ apy: apy.times(new BigNumber(100)).toNumber().toLocaleString('en-US').slice(0, -1) } }
+  })
 }
