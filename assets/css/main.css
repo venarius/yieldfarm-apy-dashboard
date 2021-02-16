@@ -1,5 +1,6 @@
 html, body {
   font-family: 'Kanit', sans-serif;
+  user-select: none;
 }
 
 .gradient-top {

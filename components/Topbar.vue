@@ -4,8 +4,9 @@
       <p class="text-xs text-gray-700 font-light">Made with ❤️ for Binance Hackathon: The Future is now</p>
       <p class="text-xs text-gray-700 font-light">Next refresh: {{ timer }} sec(s)</p>
     </div>
-    <div class="p-4 bg-white border-b border-gray-300">
+    <div class="p-4 bg-white border-b border-gray-300 flex items-center justify-between">
       <p class="text-xl font-bold">YieldFarm Dashboard</p>
+      <darkmode />
     </div>
   </div>
 </template>
@@ -19,7 +20,7 @@ export default Vue.extend({
   data () {
     return {
       timer: 60,
-      timerInterval: null
+      timerInterval: setInterval(() => {}, 1000)
     }
   },
   mounted () {
