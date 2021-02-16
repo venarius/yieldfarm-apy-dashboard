@@ -1,6 +1,6 @@
 <template>
   <div class="text-gray-600 cursor-pointer" @click="toggleDarkmode()">
-    <sun-icon v-if="darkmodeActive" />
+    <sun-icon v-if="darkModeActive" />
     <moon-icon v-else />
   </div>
 </template>
@@ -15,14 +15,15 @@ export default Vue.extend({
     SunIcon,
     MoonIcon
   },
-  data () {
-    return {
-      darkmodeActive: false
+  computed: {
+    darkModeActive: {
+      get: function () { return this.$store.state.apy.darkModeActive },
+      set: function (val) { this.$store.commit('apy/setDarkModeActive', val) }
     }
   },
   methods: {
     toggleDarkmode () {
-      this.darkmodeActive = !this.darkmodeActive
+      this.darkModeActive = !this.darkModeActive
     }
   }
 })

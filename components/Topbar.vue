@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="topbar">
     <div class="px-4 py-2 bg-white border-b border-gray-300 flex items-center justify-between">
       <p class="text-xs text-gray-700 font-light">Made with ❤️ for Binance Hackathon: The Future is now</p>
       <p class="text-xs text-gray-700 font-light">Next refresh: {{ timer }} sec(s)</p>

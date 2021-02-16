@@ -10,3 +10,28 @@ html, body {
 .white-drop {
   filter: drop-shadow(0 0 2px white);
 }
+
+/* App Dark */
+.app.dark {
+  background: rgb(23, 23, 26);
+}
+
+.app.dark .title {
+  color: white;
+}
+
+.app.dark .gradient-top {
+  background: linear-gradient(rgb(34, 37, 49) 0%, rgba(34, 37, 49, 0) 413px);
+}
+
+.app.dark .topbar, .app.dark .topbar * {
+  color: white;
+  background-color: rgb(23, 23, 26);
+  border-color: #40424e;
+}
+
+.app.dark .apy-card {
+  background: rgb(50, 53, 70);
+  border-color: rgb(50, 53, 70) !important;
+  color: white;
+}

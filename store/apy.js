@@ -1,6 +1,7 @@
 export const state = () => ({
   isLoading: true,
-  APYs: []
+  APYs: [],
+  darkModeActive: false
 })
 
 export const mutations = {
@@ -9,5 +10,8 @@ export const mutations = {
   },
   setAPYs (state, APYs) {
     state.APYs = APYs
+  },
+  setDarkModeActive (state, bool) {
+    state.darkModeActive = bool
   }
 }
