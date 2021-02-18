@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="flex items-center">
-        <p class="text-lg ml-1">{{ apy.lpSymbol }}</p>
+        <a class="text-lg ml-1 underline" target="_blank" :href="`https://exchange.pancakeswap.finance/#/add/ETH/${apy.address}`">{{ apy.lpSymbol }}</a>
         <a target="_blank" :href="`https://bscscan.com/address/${apy.address}`" class="ml-2"><img src="/img/bscscan.png" class="h-5"></a>
       </div>
     </div>
