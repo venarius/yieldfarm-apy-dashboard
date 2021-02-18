@@ -26,6 +26,5 @@ $ yarn generate
 - Calculator: Calculate earnings for different farms
 - Translated into multiple languages (currently 2)
 - Sorting options & compare options
-- Supports multiple different "farm providers"
 - Search: Quickly search for a specific farm
 - Darkmode

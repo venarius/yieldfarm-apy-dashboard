@@ -9,6 +9,7 @@ export enum QuoteToken {
   'UST' = 'UST',
   'ETH' = 'ETH',
   'COMP' = 'COMP',
+  'SXP' = 'SXP'
 }
 
 export default [

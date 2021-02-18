@@ -10,10 +10,16 @@
           <img :src="`https://bscscan.com/${token2Image}`" style="height:32px;width:32px;">
         </div>
       </div>
-      <p class="text-lg ml-1">{{ apy.lpSymbol }}</p>
+      <div class="flex items-center">
+        <p class="text-lg ml-1">{{ apy.lpSymbol }}</p>
+        <a target="_blank" :href="`https://bscscan.com/address/${apy.address}`" class="ml-2"><img src="/img/bscscan.png" class="h-5"></a>
+      </div>
     </div>
-    <p class="font-semibold text-xl" style="color:#7FFF00">APY: {{ apy.apy }}%</p>
-    Total in quote: {{ parseInt(apy.lpTotalInQuoteToken).toFixed(2) }}
+    <div class="mt-3">
+      <p class="font-semibold text-xl text-pink-500">APY: {{ apy.apy ? apy.apy : '--' }}%</p>
+      <p>Total: {{ parseInt(apy.tokenAmount).toFixed(2) }}</p>
+      <p>Total in quote: {{ parseInt(apy.quoteTokenAmount).toFixed(2) }}</p>
+    </div>
   </div>
 </template>
 

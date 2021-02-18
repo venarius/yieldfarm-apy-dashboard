@@ -35,3 +35,9 @@ html, body {
   border-color: rgb(50, 53, 70) !important;
   color: white;
 }
+
+.app.dark .provider-select div {
+  background: rgb(50, 53, 70);
+  border-color: rgb(50, 53, 70) !important;
+  color: white;
+}
