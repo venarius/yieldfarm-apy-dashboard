@@ -1,0 +1,19 @@
+.dropdown-item {
+  @apply bg-gray-200 py-2 px-4 whitespace-no-wrap block
+}
+
+.dropdown-item:hover {
+  @apply bg-gray-200
+}
+
+.dropdown-item {
+  @apply cursor-pointer bg-white
+}
+
+.dropdown-icon {
+  transition: all .25s;
+}
+
+.dropdown-icon.open {
+  transform: rotate(-180deg);
+}

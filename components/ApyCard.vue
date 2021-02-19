@@ -16,9 +16,9 @@
       </div>
     </div>
     <div class="mt-3">
-      <p class="font-semibold text-xl text-pink-500">APY: {{ apy.apy ? apy.apy : '--' }}%</p>
-      <p>Total: {{ parseInt(apy.tokenAmount).toFixed(2) }}</p>
-      <p>Total in quote: {{ parseInt(apy.quoteTokenAmount).toFixed(2) }}</p>
+      <p class="font-semibold text-xl text-pink-500">{{ $t('apy') }} {{ apy.apy ? apy.apy : '--' }}%</p>
+      <p>{{ $t('total') }} {{ parseInt(apy.tokenAmount).toFixed(2) }}</p>
+      <p>{{ $t('totalInQuote') }} {{ parseInt(apy.quoteTokenAmount).toFixed(2) }}</p>
     </div>
   </div>
 </template>
@@ -39,10 +39,10 @@ export default Vue.extend({
     } as PropOptions<any>
   },
   computed: {
-    token1Image () {
+    token1Image (): string {
       return lpSymbolToImage(this.apy.lpSymbol, 0)
     },
-    token2Image () {
+    token2Image (): string {
       return lpSymbolToImage(this.apy.lpSymbol, 1)
     }
   }

@@ -1,12 +1,15 @@
 <template>
   <div class="topbar">
     <div class="px-4 py-2 bg-white border-b border-gray-300 flex items-center justify-between">
-      <p class="text-xs text-gray-700 font-light">Made with ❤️ for Binance Hackathon: The Future is now</p>
-      <p class="text-xs text-gray-700 font-light">Next refresh: {{ timer }} sec(s)</p>
+      <p class="text-xs text-gray-700 font-light">{{ $t('madeWithLove') }}</p>
+      <p class="text-xs text-gray-700 font-light">{{ $t('nextRefresh', { seconds: timer }) }}</p>
     </div>
     <div class="p-4 bg-white border-b border-gray-300 flex items-center justify-between">
-      <p class="text-xl font-bold">YieldFarm Dashboard</p>
-      <darkmode />
+      <p class="text-xl font-bold">{{ $t('title') }}</p>
+      <div class="flex items-center">
+        <language-selector />
+        <darkmode class="ml-2" />
+      </div>
     </div>
   </div>
 </template>
