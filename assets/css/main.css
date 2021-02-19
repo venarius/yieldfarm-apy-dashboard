@@ -1,5 +1,6 @@
 @import '~/node_modules/flag-icon-css/css/flag-icon.min.css';
 @import './dropdown.css';
+@import './tippy.css';
 
 html, body {
   font-family: 'Kanit', sans-serif;

@@ -20,7 +20,7 @@
         <p class="font-semibold text-xl">{{ $t('apy') }} {{ apy.apy ? apy.apy : '--' }}%</p>
 
         <!-- ROI Tippy -->
-        <tippy arrow>
+        <tippy>
           <template v-slot:trigger>
             <info-icon name="myTrigger" size="17" class="ml-1" />
           </template>
