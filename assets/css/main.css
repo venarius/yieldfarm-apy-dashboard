@@ -7,6 +7,10 @@ html, body {
   user-select: none;
 }
 
+.app {
+  min-height: 100vh;
+}
+
 .gradient-top {
   background: linear-gradient(rgb(248, 250, 253) 0%, rgba(248, 250, 253, 0) 413px);
 }
@@ -38,13 +42,7 @@ html, body {
   border-color: #40424e;
 }
 
-.app.dark .apy-card {
-  background: rgb(50, 53, 70);
-  border-color: rgb(50, 53, 70) !important;
-  color: white;
-}
-
-.app.dark .provider-select div {
+.app.dark .apy-card, .app.dark .searchbar, .app.dark .provider-select div {
   background: rgb(50, 53, 70);
   border-color: rgb(50, 53, 70) !important;
   color: white;

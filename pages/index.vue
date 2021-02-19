@@ -6,7 +6,7 @@
 
       <!-- Search & Sort -->
       <div class="flex mb-2">
-        <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input">
+        <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar">
       </div>
       <!-- Search & Sort END -->
 
