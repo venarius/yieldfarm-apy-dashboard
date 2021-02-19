@@ -34,6 +34,8 @@ export function getApyForFarms (farms: any): any[] {
   const bnbPrice = new BigNumber(farms.find((fa: any) => fa.pid === 2)?.tokenPriceVsQuote || 0)
   const ethPriceUsd = new BigNumber(farms.find((fa: any) => fa.pid === 14)?.tokenPriceVsQuote || 0)
 
+  const basePrice = new BigNumber(1).div(bnbPrice).times(price)
+
   return farms.map((farm: any) => {
     const rewardPerBlock = YIELD_PER_BLOCK.times(farm.poolWeight)
     const rewardPerYear = rewardPerBlock.times(BLOCKS_PER_YEAR)
@@ -46,6 +48,6 @@ export function getApyForFarms (farms: any): any[] {
       apy = price.div(ethPriceUsd).times(rewardPerYear).div(farm.lpTotalInQuoteToken)
     }
 
-    return { ...farm, ...{ apy: apy.times(new BigNumber(100)).toNumber().toLocaleString('en-US').slice(0, -1) } }
+    return { ...farm, ...{ apy: apy.times(new BigNumber(100)).toNumber().toLocaleString('en-US').slice(0, -1), basePrice: basePrice } }
   })
 }

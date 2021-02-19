@@ -29,11 +29,11 @@ export default Vue.extend({
     document.removeEventListener('click', this.toggleDropdown)
   },
   methods: {
-    hasClass (element, className): boolean {
+    hasClass (element: HTMLElement, className: string): any {
       if (element.classList.contains('dropdown-item')) { return true }
       if (element.parentElement) { return this.hasClass(element.parentElement, className) }
     },
-    toggleDropdown (event) {
+    toggleDropdown (event: any) {
       if (!this.$el.contains(event.target) || this.hasClass(event.target, 'dropdown-item')) {
         this.showDropdown = false
       }

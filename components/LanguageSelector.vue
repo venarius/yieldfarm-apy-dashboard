@@ -30,10 +30,10 @@ export default Vue.extend({
     }
   },
   methods: {
-    selectLang (lang) {
+    selectLang (lang: string) {
       this.$i18n.locale = lang
     },
-    langToFlag (lang): string {
+    langToFlag (lang: keyof { en: 'gb', de: 'de' }): string {
       return { en: 'gb', de: 'de' }[lang]
     }
   }
