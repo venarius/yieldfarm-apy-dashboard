@@ -10,5 +10,6 @@ export default {
   oneDay: '1d',
   sevenDays: '7d',
   thirtyDays: '30d',
-  yearDays: '365d'
+  yearDays: '365d',
+  searchPlaceholder: 'Search...'
 }
