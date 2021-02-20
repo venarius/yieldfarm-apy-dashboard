@@ -63,7 +63,7 @@
 
       <!-- Chart -->
       <div>
-        <apexchart :key="`chart${apy.pid}`" height="80px" :series="series" :options="chartOptions" />
+        <apexchart v-if="localHistory.length > 0" :key="`chart${apy.pid}`" height="80px" :series="series" :options="chartOptions" />
       </div>
       <!-- Chart END -->
     </div>
@@ -94,8 +94,12 @@ export default Vue.extend({
   },
   data () {
     return {
-      apyModalRoi
+      apyModalRoi,
+      localHistory: []
     }
+  },
+  mounted () {
+    this.localHistory = this.history
   },
   computed: {
     price (): number {
@@ -117,7 +121,7 @@ export default Vue.extend({
     series (): any {
       return [{
         name: 'APY',
-        data: this.history.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => h.apy)
+        data: this.localHistory.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => h.apy)
       }]
     },
     chartOptions (): any {
@@ -143,7 +147,7 @@ export default Vue.extend({
         },
         colors: ['#ed64a6'],
         xaxis: {
-          categories: this.history.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => new Date(h.date).toLocaleDateString()),
+          categories: this.localHistory.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => new Date(h.date).toLocaleDateString()),
         }
       }
     }

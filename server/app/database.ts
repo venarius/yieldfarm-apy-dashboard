@@ -14,6 +14,8 @@ export async function startDatabase () {
 }
 
 export function saveApy ({ lpSymbol, apy }: any) {
+  if (!apy || !lpSymbol) { return }
+
   Apy.create({
     lp: lpSymbol,
     date: new Date(),

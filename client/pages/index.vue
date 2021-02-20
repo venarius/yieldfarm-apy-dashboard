@@ -52,13 +52,13 @@ export default Vue.extend({
     }
   },
   async mounted () {
-    const apys: any[] = await fetchAPYs()
-    this.$store.commit('apy/setAPYs', apys)
-    this.$store.commit('apy/setIsLoading', false)
-
     const response = await fetch('//localhost:8080/history')
     const dat = await response.json()
     this.historyData = dat.history
+
+    const apys: any[] = await fetchAPYs()
+    this.$store.commit('apy/setAPYs', apys)
+    this.$store.commit('apy/setIsLoading', false)
   }
 })
 </script>
