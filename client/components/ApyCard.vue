@@ -13,7 +13,7 @@
           <input v-model="calculatorDuration" type="number" aria-label="calculatorDuration" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
         </div>
       </div>
-      <p class="mt-3 text-2xl text-right font-bold">{{ $t('calcReturn') }} <span class="text-pink-500">~{{ estReturnCalculator }} {{ apy.earnSymbol }}</span></p>
+      <p class="mt-3 text-2xl text-right font-bold">{{ $t('calcReturn') }} <span class="text-pink-500">~{{ estReturnCalculator.toFixed(2) }} {{ apy.earnSymbol }}</span></p>
     </sweet-modal>
     <!-- Calculator Modal END -->
 
@@ -156,9 +156,8 @@ export default Vue.extend({
     isFavorite (): boolean {
       return this.$store.state.apy.favorites.includes(`${this.selectedProvider}:${this.apy.pid}`)
     },
-    estReturnCalculator (): string {
-      const calc = calculateEarnedPerThousandDollars({ numberOfDays: this.calculatorDuration, farmApy: this.apy.apy, price: this.price })
-      return apyModalRoi({ amountEarned: calc, amountInvested: this.calculatorInvestment / this.price })
+    estReturnCalculator (): number {
+      return (this.calculatorInvestment / 1000) * calculateEarnedPerThousandDollars({ numberOfDays: this.calculatorDuration, farmApy: this.apy.apy, price: this.price })
     },
     earnedPerThousand1D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 1, farmApy: this.apy.apy, price: this.price }) },
     earnedPerThousand7D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 7, farmApy: this.apy.apy, price: this.price }) },
