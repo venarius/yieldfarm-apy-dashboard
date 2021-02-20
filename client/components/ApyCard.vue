@@ -63,7 +63,7 @@
 
       <!-- Chart -->
       <div>
-        <apexchart height="80px" :series="series" :options="chartOptions" />
+        <apexchart :key="`chart${apy.pid}`" height="80px" :series="series" :options="chartOptions" />
       </div>
       <!-- Chart END -->
     </div>
@@ -94,28 +94,7 @@ export default Vue.extend({
   },
   data () {
     return {
-      apyModalRoi,
-      chartOptions: {
-        chart: {
-          type: 'area',
-          sparkline: {
-            enabled: true
-          },
-        },
-        stroke: {
-          curve: 'straight'
-        },
-        fill: {
-          opacity: 0.3,
-        },
-        tooltip: {
-          y: {
-            formatter: function (val: any) {
-              return val + "%"
-            }
-          }
-        }
-      }
+      apyModalRoi
     }
   },
   computed: {
@@ -140,6 +119,32 @@ export default Vue.extend({
         name: 'APY',
         data: this.history.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => h.apy)
       }]
+    },
+    chartOptions (): any {
+      return {
+        chart: {
+          type: 'area',
+          sparkline: {
+            enabled: true
+          },
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        fill: {
+          opacity: 0.3,
+        },
+        tooltip: {
+          y: {
+            formatter: function (val: any) {
+              return val + "%"
+            }
+          }
+        },
+        xaxis: {
+          categories: this.history.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => new Date(h.date).toLocaleDateString()),
+        }
+      }
     }
   }
 })

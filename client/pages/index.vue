@@ -10,7 +10,7 @@
       </div>
       <!-- Search & Sort END -->
 
-      <apy-card v-for="(apy, index) in APYs" :key="index" :apy="apy" :history="historyData" class="mb-2" />
+      <apy-card v-show="searchPIDs.length === 0 || searchPIDs.includes(apy.pid)" v-for="(apy, index) in APYs" :key="index" :apy="apy" :history="historyData" class="mb-2" />
     </div>
   </div>
 </template>
@@ -30,6 +30,9 @@ export default Vue.extend({
   },
   computed: {
     APYs (): any[] {
+      return this.$store.state.apy.APYs
+    },
+    searchPIDs (): any[] {
       if (this.search) {
         let lookupSyms: string[] = []
 
@@ -38,11 +41,10 @@ export default Vue.extend({
           const value: string = Symbols[s]
           if (s.toLowerCase().includes(this.search.toLowerCase()) || value.toLowerCase().includes(this.search.toLowerCase())) { lookupSyms.push(s) }
         })
-        console.log(lookupSyms)
 
-        return this.$store.state.apy.APYs.filter((apy: any) => !!lookupSyms.find(s => apy.lpSymbol.toLowerCase().includes(s.toLowerCase())))
+        return this.$store.state.apy.APYs.filter((apy: any) => !!lookupSyms.find(s => apy.lpSymbol.toLowerCase().includes(s.toLowerCase()))).map((apy: any) => apy.pid)
       } else {
-        return this.$store.state.apy.APYs
+        return []
       }
     },
     isLoading (): boolean {
