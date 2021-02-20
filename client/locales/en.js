@@ -11,5 +11,7 @@ export default {
   sevenDays: '7d',
   thirtyDays: '30d',
   yearDays: '365d',
-  searchPlaceholder: 'Search...'
+  searchPlaceholder: 'Search...',
+  favoritesTitle: 'Your Favorites',
+  favoritesEmpty: 'farms marked as favorite will appear here'
 }

@@ -57,3 +57,11 @@ html, body {
   border: 1px solid rgb(39, 39, 39);
   background: rgba(0, 0, 0, 0.96);
 }
+
+.app.dark .favorites-title {
+  color: rgb(106, 112, 146);
+}
+
+.app.dark .favorites {
+  background-color: rgb(50, 53, 70);
+}

@@ -2,10 +2,13 @@
   <div class="container mx-auto">
     <loader />
     <div v-if="!isLoading">
-      <p class="text-2xl font-semibold text-gray-800 text-center mb-8 title">{{ $t('apyListTitle') }}</p>
+      <p class="text-xl text-gray-600 favorites-title">{{ $t('favoritesTitle') }}</p>
+      <div class="rounded-lg bg-gray-200 w-full py-24 favorites">
+        <p class="text-center text-gray-600 font-light">{{ $t('favoritesEmpty') }}</p>
+      </div>
 
       <!-- Search & Sort -->
-      <div class="flex mb-2">
+      <div class="flex mb-2 mt-8">
         <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar">
       </div>
       <!-- Search & Sort END -->
