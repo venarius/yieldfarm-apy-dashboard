@@ -1,5 +1,7 @@
 import { Sequelize, Model, DataTypes } from 'sequelize'
 
+import { apyModalRoi, calculateEarnedPerThousandDollars } from './apy/helpers'
+
 const sequelize = new Sequelize('sqlite:./database.db', { logging: false })
 
 class Apy extends Model {}
@@ -13,8 +15,12 @@ export async function startDatabase () {
   await sequelize.sync()
 }
 
-export function saveApy ({ lpSymbol, apy }: any, key: string) {
+export function saveApy ({ lpSymbol, apy, basePrice }: any, key: string) {
   if (!apy || !lpSymbol) { return }
+
+  const oneThousandDollarsWorth = 1000 / basePrice
+  const earnedPerThousand365D = calculateEarnedPerThousandDollars({ numberOfDays: 365, farmApy: apy, price: basePrice })
+  apy = apyModalRoi({ amountEarned: earnedPerThousand365D, amountInvested: oneThousandDollarsWorth })
 
   Apy.create({
     lp: `${key}:${lpSymbol}`,

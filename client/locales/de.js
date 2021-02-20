@@ -1,5 +1,6 @@
 export default {
   apy: 'Effektivertrag:',
+  apr: 'Jahreszins:',
   total: 'Anzahl:',
   totalInQuote: 'Anzahl In Quote:',
   madeWithLove: 'Mit ❤️ gemacht für Binance Hackathon: The Future is now',

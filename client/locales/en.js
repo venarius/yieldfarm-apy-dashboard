@@ -1,5 +1,6 @@
 export default {
   apy: 'APY:',
+  apr: 'APR:',
   total: 'Total:',
   totalInQuote: 'Total In Quote:',
   madeWithLove: 'Made with ❤️ for Binance Hackathon: The Future is now',

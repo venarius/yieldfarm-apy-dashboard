@@ -41,7 +41,7 @@
     <div class="mt-2">
       <div>
         <div class="flex items-center text-pink-500">
-          <p class="font-semibold text-xl">{{ $t('apy') }} {{ apy.apy > -1 ? apy.apy.toFixed(2) : '--' }}%</p>
+          <p class="font-semibold text-xl">{{ $t('apy') }} {{ apy.apy > -1 ? apyModalRoi({ amountEarned: this.earnedPerThousand365D, amountInvested: oneThousandDollarsWorth }) : '--' }}%</p>
 
           <!-- ROI Tippy -->
           <tippy>
@@ -83,8 +83,8 @@
         </div>
 
         <p>{{ $t('earn') }} {{ apy.earnSymbol }}</p>
+        <p>{{ $t('apr') }} {{ apy.apy.toFixed(2) }}%</p>
         <p>{{ $t('total') }} {{ parseInt(apy.tokenAmount).toFixed(2) }} {{ token1 }}</p>
-        <p>{{ $t('totalInQuote') }} {{ parseInt(apy.quoteTokenAmount).toFixed(2) }} {{ token1 }}</p>
       </div>
 
       <!-- Chart -->
