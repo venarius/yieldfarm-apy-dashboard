@@ -10,7 +10,7 @@
       </div>
       <!-- Search & Sort END -->
 
-      <apy-card v-show="searchPIDs.length === 0 || searchPIDs.includes(apy.pid)" v-for="(apy, index) in APYs" :key="index" :apy="apy" :history="historyData" class="mb-2" />
+      <apy-card v-show="searchPIDs.length === 0 || searchPIDs.includes(apy.pid)" v-for="(apy, index) in APYs" :key="index" :apy="apy" :history="historyData.filter(h => h.lp === apy.lpSymbol)" class="mb-2" />
     </div>
   </div>
 </template>

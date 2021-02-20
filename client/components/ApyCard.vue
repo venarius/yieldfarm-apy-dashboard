@@ -99,7 +99,8 @@ export default Vue.extend({
     }
   },
   mounted () {
-    this.localHistory = this.history
+    // Get newest 30 history entries
+    this.localHistory = this.history.map((h: any) => { return { ...h, ...{ date: new Date(h.date).getTime() } } }).sort((a: any, b: any) => a.date.toString().localeCompare(b.date.toString())).slice(0, 30)
   },
   computed: {
     price (): number {
@@ -121,7 +122,7 @@ export default Vue.extend({
     series (): any {
       return [{
         name: 'APY',
-        data: this.localHistory.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => h.apy)
+        data: this.localHistory.map((h: any) => h.apy)
       }]
     },
     chartOptions (): any {
@@ -147,7 +148,7 @@ export default Vue.extend({
         },
         colors: ['#ed64a6'],
         xaxis: {
-          categories: this.localHistory.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => new Date(h.date).toLocaleDateString()),
+          categories: this.localHistory.map((h: any) => new Date(h.date).toLocaleDateString()),
         }
       }
     }

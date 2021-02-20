@@ -37,7 +37,8 @@ $ node dist/index.js
 
 # Features
 - Live Updates: Updates every 60 seconds
-- History: See history APYs for the last 30 days (better than the yieldfarms section on coinmarketcap)
+- History: See history APYs for the last 30 days
+- Mark farms as favorite to have them displayed on the top
 - Responsive: Also works perfectly on mobile devices
 - Calculator: Calculate earnings for different farms
 - Translated into multiple languages (currently 2)

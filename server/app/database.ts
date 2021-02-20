@@ -1,6 +1,6 @@
 import { Sequelize, Model, DataTypes } from 'sequelize'
 
-const sequelize = new Sequelize('sqlite::memory:', { logging: false })
+const sequelize = new Sequelize('sqlite:./database.db', { logging: false })
 
 class Apy extends Model {}
 Apy.init({
