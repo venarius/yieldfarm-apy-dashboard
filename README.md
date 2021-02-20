@@ -22,6 +22,8 @@ The dashboard has a lot features which I also listed below. It was my first proj
 ### 🌗 **Darkmode**
 ### ♿ **Focused on accessibility**
 
+![Accessibility Score](./content/accessibility.png)
+
 <br></br>
 # Build Setup
 

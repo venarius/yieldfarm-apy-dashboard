@@ -15,7 +15,7 @@
 
       <!-- Search & Sort -->
       <div class="flex mb-2">
-        <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar bg-gray-300 text-gray-900">
+        <input v-model="search" aria-label="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar bg-gray-300 text-gray-900">
         
         <Dropdown class="sort-dropdown ml-2">
           <div slot="selected">

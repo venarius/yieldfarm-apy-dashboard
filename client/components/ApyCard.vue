@@ -6,11 +6,11 @@
       <div class="flex flex-col md:flex-row">
         <div class="flex-1">
           <p>{{ $t('calcInvestment') }}</p>
-          <input v-model="calculatorInvestment" type="number" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
+          <input v-model="calculatorInvestment" type="number" aria-label="calculatorInvestment" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
         </div>
         <div class="flex-1 mt-2 md:mt-0 md:ml-3">
           <p>{{ $t('calcDuration') }}</p>
-          <input v-model="calculatorDuration" type="number" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
+          <input v-model="calculatorDuration" type="number" aria-label="calculatorDuration" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
         </div>
       </div>
       <p class="mt-3 text-2xl text-right font-bold">{{ $t('calcReturn') }} <span class="text-pink-500">~{{ estReturnCalculator }} {{ apy.earnSymbol }}</span></p>
@@ -21,11 +21,11 @@
       <div class="flex items-start justify-between">
         <div class="flex items-center">
           <div class="flex items-center justify-center border-2 border-gray-500 rounded-full" style="width:3.5rem;height:3.5rem;">
-            <img :src="`https://bscscan.com/${token1Image}`" style="height:32px;width:32px;">
+            <img alt="Token Image" :src="`https://bscscan.com/${token1Image}`" style="height:32px;width:32px;">
           </div>
           <repeat-icon class="mx-2" />
           <div class="flex items-center justify-center border-2 border-gray-500 rounded-full" style="width:3.5rem;height:3.5rem;">
-            <img :src="`https://bscscan.com/${token2Image}`" style="height:32px;width:32px;">
+            <img alt="Token Image" :src="`https://bscscan.com/${token2Image}`" style="height:32px;width:32px;">
           </div>
         </div>
         <div class="cursor-pointer" @click="favorite()">
@@ -35,7 +35,7 @@
       </div>
       <div class="flex items-center mt-2">
         <a class="text-xl ml-1 underline" target="_blank" :href="`https://exchange.pancakeswap.finance/#/add/ETH/${apy.address}`">{{ apy.lpSymbol }}</a>
-        <a target="_blank" :href="`https://bscscan.com/address/${apy.address}`" class="ml-2"><img src="/img/bscscan.png" class="h-5"></a>
+        <a target="_blank" :href="`https://bscscan.com/address/${apy.address}`" class="ml-2"><img alt="bscscan.com logo" src="/img/bscscan.png" class="h-5"></a>
       </div>
     </div>
     <div class="mt-2">
