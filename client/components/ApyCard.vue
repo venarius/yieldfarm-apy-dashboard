@@ -1,21 +1,24 @@
 <template>
-  <div class="border bg-white p-4 shadow-lg rounded-lg apy-card" style="border-color: #eaeaea;">
-    <div class="flex items-start justify-between">
-      <div class="flex items-center">
-        <div class="flex items-center justify-center border-2 border-gray-500 rounded-full" style="width:3.5rem;height:3.5rem;">
-          <img :src="`https://bscscan.com/${token1Image}`" style="height:32px;width:32px;">
+  <div class="border bg-white p-4 shadow-lg rounded-lg apy-card hover:shadow-2xl transition duration-200" style="border-color: #eaeaea;">
+    <div>
+      <div class="flex items-start justify-between">
+        <div class="flex items-center">
+          <div class="flex items-center justify-center border-2 border-gray-500 rounded-full" style="width:3.5rem;height:3.5rem;">
+            <img :src="`https://bscscan.com/${token1Image}`" style="height:32px;width:32px;">
+          </div>
+          <repeat-icon class="mx-2" />
+          <div class="flex items-center justify-center border-2 border-gray-500 rounded-full" style="width:3.5rem;height:3.5rem;">
+            <img :src="`https://bscscan.com/${token2Image}`" style="height:32px;width:32px;">
+          </div>
         </div>
-        <repeat-icon class="mx-2" />
-        <div class="flex items-center justify-center border-2 border-gray-500 rounded-full" style="width:3.5rem;height:3.5rem;">
-          <img :src="`https://bscscan.com/${token2Image}`" style="height:32px;width:32px;">
-        </div>
+        <star-icon class="text-gray-600" />
       </div>
-      <div class="flex items-center">
-        <a class="text-lg ml-1 underline" target="_blank" :href="`https://exchange.pancakeswap.finance/#/add/ETH/${apy.address}`">{{ apy.lpSymbol }}</a>
+      <div class="flex items-center mt-2">
+        <a class="text-xl ml-1 underline" target="_blank" :href="`https://exchange.pancakeswap.finance/#/add/ETH/${apy.address}`">{{ apy.lpSymbol }}</a>
         <a target="_blank" :href="`https://bscscan.com/address/${apy.address}`" class="ml-2"><img src="/img/bscscan.png" class="h-5"></a>
       </div>
     </div>
-    <div class="mt-3 flex justify-between">
+    <div class="mt-2">
       <div>
         <div class="flex items-center text-pink-500">
           <p class="font-semibold text-xl">{{ $t('apy') }} {{ apy.apy ? apy.apy : '--' }}%</p>
@@ -55,6 +58,8 @@
             </div>
           </tippy>
           <!-- ROI Tippy END -->
+
+          <i class="fas fa-calculator ml-1 cursor-pointer"></i>
         </div>
 
         <p>{{ $t('total') }} {{ parseInt(apy.tokenAmount).toFixed(2) }}</p>
@@ -62,7 +67,7 @@
       </div>
 
       <!-- Chart -->
-      <div>
+      <div class="mt-2">
         <apexchart v-if="localHistory.length > 0" :key="`chart${apy.pid}`" height="80px" :series="series" :options="chartOptions" />
       </div>
       <!-- Chart END -->
@@ -72,7 +77,7 @@
 
 <script lang="ts">
 import Vue, { PropOptions } from 'vue'
-import { RepeatIcon, InfoIcon } from 'vue-feather-icons'
+import { RepeatIcon, InfoIcon, StarIcon } from 'vue-feather-icons'
 
 import { lpSymbolToImage } from '../helpers'
 import { calculateEarnedPerThousandDollars, apyModalRoi } from '../apy/helpers'
@@ -80,7 +85,8 @@ import { calculateEarnedPerThousandDollars, apyModalRoi } from '../apy/helpers'
 export default Vue.extend({
   components: {
     RepeatIcon,
-    InfoIcon
+    InfoIcon,
+    StarIcon
   },
   props: {
     apy: {
