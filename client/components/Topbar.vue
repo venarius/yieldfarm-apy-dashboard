@@ -13,7 +13,7 @@
     <div class="bar p-4 bg-white border-b border-gray-300 flex items-center justify-between">
       <div class="flex items-center">
         <img src="/img/binance.png" class="mr-2 h-8" />
-        <p class="text-xl font-semibold title" v-html="$t('title')" />
+        <p class="text-xl font-semibold title whitespace-nowrap" v-html="$t('title')" />
       </div>
       <div class="flex items-center">
         <language-selector />
@@ -35,6 +35,11 @@ export default Vue.extend({
       timerInterval: setInterval(() => {}, 1000)
     }
   },
+  computed: {
+    selectedProvider (): string {
+      return this.$store.state.apy.selectedProvider
+    }
+  },
   mounted () {
     this.startTimer()
   },
@@ -54,7 +59,7 @@ export default Vue.extend({
       }, 1000, this)
     },
     async refreshAPYs () {
-      const apys: any[] = await fetchAPYs()
+      const apys: any[] = await fetchAPYs(this.selectedProvider as any)
       this.$store.commit('apy/setAPYs', apys)
     }
   }
