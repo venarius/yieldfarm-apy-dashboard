@@ -141,6 +141,7 @@ export default Vue.extend({
             }
           }
         },
+        colors: ['#ed64a6'],
         xaxis: {
           categories: this.history.filter((h: any) => h.lp === this.apy.lpSymbol).map((h: any) => new Date(h.date).toLocaleDateString()),
         }

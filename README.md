@@ -4,6 +4,8 @@ Made with ❤️ from scratch for Binance Hackathon: The Future is now
 
 ## Build Setup
 
+### Client
+
 ```bash
 # install dependencies
 $ yarn install
@@ -17,6 +19,20 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+```
+
+### Server
+
+```bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:8080
+$ yarn run dev
+
+# build for production and launch server
+$ tsc
+$ node dist/index.js
 ```
 
 # Features
