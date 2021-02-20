@@ -47,3 +47,13 @@ html, body {
   border-color: rgb(50, 53, 70) !important;
   color: white;
 }
+
+.app.dark .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #19191a;
+  border-bottom: 1px solid rgb(39, 39, 39);
+}
+
+.app.dark .apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid rgb(39, 39, 39);
+  background: rgba(0, 0, 0, 0.96);
+}
