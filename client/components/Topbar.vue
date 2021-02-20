@@ -11,7 +11,10 @@
       </div>
     </div>
     <div class="bar p-4 bg-white border-b border-gray-300 flex items-center justify-between">
-      <p class="text-xl font-bold">{{ $t('title') }}</p>
+      <div class="flex items-center">
+        <img src="/img/binance.png" class="mr-2 h-8" />
+        <p class="text-xl font-semibold title">{{ $t('title') }}</p>
+      </div>
       <div class="flex items-center">
         <language-selector />
         <darkmode class="ml-2" />

@@ -44,8 +44,8 @@ input[type=number] {
   background: rgb(23, 23, 26);
 }
 
-.app.dark .title {
-  color: white;
+.title {
+  color: #F0B90B;
 }
 
 .app.dark .gradient-top {
