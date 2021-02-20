@@ -8,6 +8,8 @@ I created the BSC Yieldfarming Dashboard because I was missing a better overview
 
 The dashboard has a lot features which I also listed below. It was my first project in the crypto world and I really enjoyed making it!
 
+[![Demo video](https://img.youtube.com/vi/jHm1GGcCA3w/0.jpg)](https://youtu.be/jHm1GGcCA3w)
+
 <br></br>
 # Features
 #### 🕑 **Updates live every 60 seconds**
