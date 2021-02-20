@@ -150,8 +150,11 @@ export default Vue.extend({
     token2Image (): string {
       return lpSymbolToImage(this.apy.lpSymbol, 1)
     },
+    selectedProvider (): string {
+      return this.$store.state.apy.selectedProvider
+    },
     isFavorite (): boolean {
-      return this.$store.state.apy.favorites.includes(this.apy.pid)
+      return this.$store.state.apy.favorites.includes(`${this.selectedProvider}:${this.apy.pid}`)
     },
     estReturnCalculator (): string {
       const calc = calculateEarnedPerThousandDollars({ numberOfDays: this.calculatorDuration, farmApy: this.apy.apy, price: this.price })
