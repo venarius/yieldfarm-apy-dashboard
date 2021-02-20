@@ -3,12 +3,12 @@
 
     <!-- Calculator Modal -->
     <sweet-modal ref="calculatorModal" title="ROI Calculator">
-      <div class="flex">
+      <div class="flex flex-col md:flex-row">
         <div class="flex-1">
           <p>{{ $t('calcInvestment') }}</p>
           <input v-model="calculatorInvestment" type="number" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
         </div>
-        <div class="flex-1 ml-3">
+        <div class="flex-1 mt-2 md:mt-0 md:ml-3">
           <p>{{ $t('calcDuration') }}</p>
           <input v-model="calculatorDuration" type="number" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
         </div>

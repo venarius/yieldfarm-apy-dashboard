@@ -42,7 +42,8 @@ $ node dist/index.js
 - Responsive: Also works perfectly on mobile devices
 - Calculator: Calculate earnings for different farms
 - Translated into multiple languages (currently 2)
-- Sorting options & compare options
+- Sorting options
+- Supports multiple different farm "providers" (currently 3)
 - Search: Quickly search for a specific farm
 - Darkmode
 

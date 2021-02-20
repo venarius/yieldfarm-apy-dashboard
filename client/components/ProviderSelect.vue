@@ -1,5 +1,5 @@
 <template>
-  <div class="flex provider-select">
+  <div class="flex provider-select overflow-auto">
     <div
       v-for="(provider, index) in availableProviders"
       :key="index"

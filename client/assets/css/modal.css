@@ -16,6 +16,10 @@
   background-color: #ed64a6 !important;
 }
 
+.sweet-modal .sweet-content {
+  padding: 1rem !important;
+}
+
 @media (max-width: 767px) {
   .sweet-modal { border-radius: 0 !important; }
   .sweet-content { padding: 4rem 1rem 1rem 1rem !important; }

@@ -13,7 +13,7 @@
     <div class="bar p-4 bg-white border-b border-gray-300 flex items-center justify-between">
       <div class="flex items-center">
         <img src="/img/binance.png" class="mr-2 h-8" />
-        <p class="text-xl font-semibold title">{{ $t('title') }}</p>
+        <p class="text-xl font-semibold title" v-html="$t('title')" />
       </div>
       <div class="flex items-center">
         <language-selector />
