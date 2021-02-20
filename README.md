@@ -1,5 +1,7 @@
 # BSC Yieldfarming Dashboard
 
+# LIVE DEMO: <u>[Click Here](https://boring-clarke-3f4d09.netlify.app/)</u>
+
 ![Screenshot](./content/screenshot.png)
 
 ## Made with ❤️ from scratch for Binance Hackathon: The Future is now
@@ -10,6 +12,9 @@ The dashboard has a lot features which I also listed below. It was my first proj
 
 <br></br>
 # Demo Video
+
+Sorry for my stuttering. I'm very much introverted 😅
+
 [![Demo video](https://img.youtube.com/vi/jHm1GGcCA3w/0.jpg)](https://youtu.be/jHm1GGcCA3w)
 
 <br></br>

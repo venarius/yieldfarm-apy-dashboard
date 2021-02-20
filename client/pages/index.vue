@@ -112,7 +112,7 @@ export default Vue.extend({
     }
   },
   async mounted () {
-    const response = await fetch('//192.168.0.148:8080/history')
+    const response = await fetch('//binance-apy-dashboard-api.piktu.io/history')
     const dat = await response.json()
     this.historyData = dat.history
 
