@@ -10,17 +10,17 @@ The dashboard has a lot features which I also listed below. It was my first proj
 
 <br></br>
 # Features
-### 🕑 **Updates live every 60 seconds**
-### 📈 **See history APYs for the last 30 days for each farm**
-### ⭐ **Mark farms as favorite to have them displayed on the top**
-### 📱 **Works perfectly on all mobile devices**
-### ➕ **Calculate earnings for different farms**
-### 🌐 **Translated into multiple languages (currently 2)**
-### ⬇️ **Sorting options**
-### 🔗 **Supports multiple different farm "providers" (currently 3)**
-### 🔍 **Quickly search for a specific farm**
-### 🌗 **Darkmode**
-### ♿ **Focused on accessibility**
+#### 🕑 **Updates live every 60 seconds**
+#### 📈 **See history APYs for the last 30 days for each farm**
+#### ⭐ **Mark farms as favorite to have them displayed on the top**
+#### 📱 **Works perfectly on all mobile devices**
+#### ➕ **Calculate earnings for different farms**
+#### 🌐 **Translated into multiple languages (currently 2)**
+#### ⬇️ **Sorting options**
+#### 🔗 **Supports multiple different farm "providers" (currently 3)**
+#### 🔍 **Quickly search for a specific farm**
+#### 🌗 **Darkmode**
+#### ♿ **Focused on accessibility**
 
 ![Accessibility Score](./content/accessibility.png)
 
