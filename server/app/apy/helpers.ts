@@ -27,7 +27,7 @@ export function apyModalRoi ({ amountEarned, amountInvested }: any): string {
   return percentage.toFixed(2)
 }
 
-export function getApyForFarms (farms: any): any[] {
+export function getApyForFarms (farms: any, yield_per_block: BigNumber): any[] {
   const PriceVsBNB = new BigNumber(farms.find((fa: any) => fa.pid === POOL_PID)?.tokenPriceVsQuote || 0)
 
   const price = new BigNumber(farms.find((fa: any) => fa.pid === 1)?.tokenPriceVsQuote || 0)
@@ -37,7 +37,7 @@ export function getApyForFarms (farms: any): any[] {
   const basePrice = new BigNumber(1).div(bnbPrice).times(price)
 
   return farms.map((farm: any) => {
-    const rewardPerBlock = YIELD_PER_BLOCK.times(farm.poolWeight)
+    const rewardPerBlock = yield_per_block.times(farm.poolWeight)
     const rewardPerYear = rewardPerBlock.times(BLOCKS_PER_YEAR)
 
     let apy = PriceVsBNB.times(rewardPerYear).div(farm.lpTotalInQuoteToken)

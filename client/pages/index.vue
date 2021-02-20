@@ -7,7 +7,7 @@
         <p v-if="favoriteAPYs.length === 0" class="text-center text-gray-600 font-light">{{ $t('favoritesEmpty') }}</p>
 
         <div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-          <apy-card v-for="apy in favoriteAPYs" :key="`favorite${apy.pid}`" :apy="apy" :history="historyData.filter(h => h.lp === apy.lpSymbol)" />
+          <apy-card v-for="apy in favoriteAPYs" :key="`favorite${apy.pid}`" :apy="apy" :history="historyData.filter(h => h.lp === `${selectedProvider}:${apy.lpSymbol}`)" />
         </div>
       </div>
 
@@ -31,7 +31,7 @@
       <!-- Search & Sort END -->
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-        <apy-card v-show="searchPIDs.length === 0 || searchPIDs.includes(apy.pid)" v-for="apy in APYs" :key="`apy${apy.pid}`" :apy="apy" :history="historyData.filter(h => h.lp === apy.lpSymbol)" />
+        <apy-card v-show="searchPIDs.length === 0 || searchPIDs.includes(apy.pid)" v-for="apy in APYs" :key="`apy${apy.pid}`" :apy="apy" :history="historyData.filter(h => h.lp === `${selectedProvider}:${apy.lpSymbol}`)" />
       </div>
     </div>
   </div>

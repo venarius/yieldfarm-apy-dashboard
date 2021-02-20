@@ -9,10 +9,14 @@ export enum QuoteToken {
   'UST' = 'UST',
   'ETH' = 'ETH',
   'COMP' = 'COMP',
-  'SXP' = 'SXP'
+  'SXP' = 'SXP',
+  'WEED' = 'WEED',
+  'USDC' = 'USDC',
+  'CHS' = 'CHS',
+  'USDT' = 'USDT'
 }
 
-export default [
+export const pancake = [
   {
     pid: 0,
     lpSymbol: 'CAKE',
@@ -27,6 +31,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 1,
@@ -42,6 +47,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 73,
@@ -58,6 +64,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 72,
@@ -74,6 +81,7 @@ export default [
     quoteTokenSymbol: QuoteToken.ETH,
     quoteTokenAdresses: contracts.eth,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 71,
@@ -90,6 +98,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 70,
@@ -106,6 +115,7 @@ export default [
     quoteTokenSymbol: QuoteToken.ETH,
     quoteTokenAdresses: contracts.eth,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 69,
@@ -122,6 +132,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 68,
@@ -138,6 +149,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 67,
@@ -154,6 +166,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 66,
@@ -170,6 +183,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 65,
@@ -186,6 +200,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 63,
@@ -202,6 +217,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 62,
@@ -218,6 +234,7 @@ export default [
     quoteTokenSymbol: QuoteToken.UST,
     quoteTokenAdresses: contracts.ust,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 61,
@@ -234,6 +251,7 @@ export default [
     quoteTokenSymbol: QuoteToken.UST,
     quoteTokenAdresses: contracts.ust,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 60,
@@ -250,6 +268,7 @@ export default [
     quoteTokenSymbol: QuoteToken.UST,
     quoteTokenAdresses: contracts.ust,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 59,
@@ -266,6 +285,7 @@ export default [
     quoteTokenSymbol: QuoteToken.UST,
     quoteTokenAdresses: contracts.ust,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 58,
@@ -282,6 +302,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 57,
@@ -298,6 +319,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 56,
@@ -314,6 +336,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 55,
@@ -330,6 +353,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 54,
@@ -346,6 +370,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 53,
@@ -362,6 +387,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 52,
@@ -378,6 +404,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 51,
@@ -394,6 +421,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 50,
@@ -410,6 +438,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 49,
@@ -426,6 +455,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 46,
@@ -442,6 +472,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 47,
@@ -458,6 +489,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 48,
@@ -474,6 +506,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 45,
@@ -490,6 +523,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 44,
@@ -506,6 +540,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 43,
@@ -522,6 +557,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 42,
@@ -538,6 +574,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 39,
@@ -555,6 +592,7 @@ export default [
     quoteTokenAdresses: contracts.wbnb,
     multiplier: '1X',
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 41,
@@ -571,6 +609,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 40,
@@ -587,6 +626,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 37,
@@ -603,6 +643,7 @@ export default [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     isCommunity: false,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 2,
@@ -618,6 +659,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 3,
@@ -633,6 +675,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 4,
@@ -648,6 +691,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 5,
@@ -663,6 +707,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 6,
@@ -678,6 +723,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 7,
@@ -693,6 +739,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 11,
@@ -708,6 +755,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 12,
@@ -723,6 +771,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 13,
@@ -738,6 +787,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 14,
@@ -753,6 +803,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 15,
@@ -768,6 +819,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 16,
@@ -783,6 +835,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 17,
@@ -798,6 +851,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 18,
@@ -813,6 +867,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 19,
@@ -828,6 +883,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 20,
@@ -843,6 +899,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 21,
@@ -858,6 +915,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 22,
@@ -873,6 +931,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 23,
@@ -888,6 +947,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 24,
@@ -903,6 +963,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 25,
@@ -918,6 +979,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 26,
@@ -933,6 +995,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 27,
@@ -948,6 +1011,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 29,
@@ -963,6 +1027,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 30,
@@ -978,6 +1043,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 32,
@@ -993,6 +1059,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 34,
@@ -1009,6 +1076,7 @@ export default [
     quoteTokenSymbol: QuoteToken.CAKE,
     quoteTokenAdresses: contracts.cake,
     isCommunity: true,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 35,
@@ -1025,6 +1093,7 @@ export default [
     quoteTokenSymbol: QuoteToken.CAKE,
     quoteTokenAdresses: contracts.cake,
     isCommunity: true,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 36,
@@ -1041,6 +1110,7 @@ export default [
     quoteTokenSymbol: QuoteToken.CAKE,
     quoteTokenAdresses: contracts.cake,
     isCommunity: true,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 38,
@@ -1057,6 +1127,7 @@ export default [
     quoteTokenSymbol: QuoteToken.CAKE,
     quoteTokenAdresses: contracts.cake,
     isCommunity: true,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 8,
@@ -1072,6 +1143,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 9,
@@ -1087,6 +1159,7 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
   },
   {
     pid: 10,
@@ -1102,5 +1175,223 @@ export default [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'CAKE'
+  },
+]
+
+export const dankswap = [
+  {
+    pid: 0,
+    lpSymbol: 'WEED',
+    lpAddresses: {
+      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      56: '0x9E7942a24be24B18A56CEac7bA9926C5FBFc4E27',
+    },
+    tokenSymbol: 'ROSIN',
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x9E7942a24be24B18A56CEac7bA9926C5FBFc4E27',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'WEED'
+  },
+  {
+    pid: 1,
+    lpSymbol: 'WEED-BNB LP',
+    lpAddresses: {
+      97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
+      56: '0x8FC47f0fF5aa06874F0C90F1F92c80cC622AD73F',
+    },
+    tokenSymbol: 'WEED',
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x9E7942a24be24B18A56CEac7bA9926C5FBFc4E27',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'WEED'
+  },
+  {
+    pid: 2,
+    lpSymbol: 'BUSD-BNB LP',
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x5179c61dBbCf314283930614dD1000E3680d5E46',
+    },
+    tokenSymbol: 'BUSD',
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'WEED'
+  },
+  {
+    pid: 3,
+    lpSymbol: 'WEED-BUSD LP',
+    lpAddresses: {
+      97: '0xcbe3282a562e23b8c61ed04bb72ffdbb9233b1ce',
+      56: '0x05a32318cfCe04fcAd86b351Fcc443E98DabDbd6',
+    },
+    tokenSymbol: 'WEED',
+    tokenAddresses: {
+      97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
+      56: '0x9E7942a24be24B18A56CEac7bA9926C5FBFc4E27',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+    earnSymbol: 'WEED'
+  },
+  {
+    pid: 4,
+    lpSymbol: 'VAI-BUSD LP',
+    lpAddresses: {
+      97: '0xcbe3282a562e23b8c61ed04bb72ffdbb9233b1ce',
+      56: '0x48b64856611BF0FD14a27ddbd14527Ad7ED02223',
+    },
+    tokenSymbol: 'VAI',
+    tokenAddresses: {
+      97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
+      56: '0x4BD17003473389A42DAF6a0a729f6Fdb328BbBd7',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+    earnSymbol: 'WEED'
+  },
+  {
+    pid: 5,
+    lpSymbol: 'CAKE-WEED LP',
+    lpAddresses: {
+      97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
+      56: '0x857B83C6e3468644E950aAe395bC99A9811b34EC',
+    },
+    tokenSymbol: 'CAKE',
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+    },
+    quoteTokenSymbol: QuoteToken.WEED,
+    quoteTokenAdresses: contracts.cake,
+    earnSymbol: 'WEED'
+  },
+]
+
+export const kiwifinance = [
+  {
+    pid: 0,
+    lpSymbol: 'KIWI',
+    lpAddresses: {
+      97: '',
+      56: '0xCfDf8A80fECAeeCC144fa74c0Df8691BFd0e26e3',
+    },
+    tokenSymbol: 'SALSA',
+    tokenAddresses: {
+      97: '',
+      56: '0x75A26B9EfD0a5BD1A73bCc791Ac14B818E11758E',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'KIWI'
+  },
+  {
+    pid: 1,
+    lpSymbol: 'KIWI-BNB LP',
+    lpAddresses: {
+      97: '',
+      56: '0xDf8481f4ffb688d940f59F839c2613cc6C40a79E',
+    },
+    tokenSymbol: 'KIWI',
+    tokenAddresses: {
+      97: '',
+      56: '0xCfDf8A80fECAeeCC144fa74c0Df8691BFd0e26e3',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'KIWI'
+  },
+  {
+    pid: 2,
+    lpSymbol: 'KIWI-BUSD LP',
+    lpAddresses: {
+      97: '',
+      56: '0x6254C5be216B7E17ff27E82d06e96BAdF799885B',
+    },
+    tokenSymbol: 'KIWI',
+    tokenAddresses: {
+      97: '',
+      56: '0xCfDf8A80fECAeeCC144fa74c0Df8691BFd0e26e3',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+    isCommunity: false,
+    earnSymbol: 'KIWI'
+  },
+  {
+   pid: 3,
+   lpSymbol: 'KIWI-USDT LP',
+   lpAddresses: {
+     97: '',
+     56: '0xab2c09F73FB62B033C6B5CfDb929C422033B0619',
+   },
+   tokenSymbol: 'KIWI',
+   tokenAddresses: {
+     97: '',
+     56: '0xCfDf8A80fECAeeCC144fa74c0Df8691BFd0e26e3',
+   },
+   quoteTokenSymbol: QuoteToken.USDT,
+   quoteTokenAdresses: contracts.usdt,
+   isCommunity: false,
+   earnSymbol: 'KIWI'
+ },
+ {
+  pid: 4,
+  lpSymbol: 'KIWI-USDC LP',
+  lpAddresses: {
+    97: '',
+    56: '0xaC8532CD60CF37440e00c86c0EFDe31C1Dbcf099',
+  },
+  tokenSymbol: 'KIWI',
+  tokenAddresses: {
+    97: '',
+    56: '0xCfDf8A80fECAeeCC144fa74c0Df8691BFd0e26e3',
+  },
+  quoteTokenSymbol: QuoteToken.USDC,
+  quoteTokenAdresses: contracts.usdc,
+  isCommunity: false,
+  earnSymbol: 'KIWI'
+},
+{
+    pid: 6,
+    lpSymbol: 'KIWI-CHS LP',
+    lpAddresses: {
+      97: '',
+      56: '0xF5Cfb60d7265f423736cF69b20953AC745d8d223',
+    },
+    tokenSymbol: 'KIWI',
+    tokenAddresses: {
+      97: '',
+      56: '0xCfDf8A80fECAeeCC144fa74c0Df8691BFd0e26e3',
+    },
+    quoteTokenSymbol: QuoteToken.CHS,
+    quoteTokenAdresses: contracts.chs,
+    earnSymbol: 'KIWI'
+  },
+  {
+    pid: 5,
+    lpSymbol: 'USDT-BNB LP',
+    lpAddresses: {
+      97: '',
+      56: '0xcfD63197d764cd70d07bB607e6367Ae0E869BaDD',
+    },
+    tokenSymbol: 'USDT',
+    tokenAddresses: {
+      97: '',
+      56: '0x55d398326f99059fF775485246999027B3197955',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    earnSymbol: 'KIWI'
   },
 ]

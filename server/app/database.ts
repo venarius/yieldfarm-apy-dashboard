@@ -13,11 +13,11 @@ export async function startDatabase () {
   await sequelize.sync()
 }
 
-export function saveApy ({ lpSymbol, apy }: any) {
+export function saveApy ({ lpSymbol, apy }: any, key: string) {
   if (!apy || !lpSymbol) { return }
 
   Apy.create({
-    lp: lpSymbol,
+    lp: `${key}:${lpSymbol}`,
     date: new Date(),
     apy
   })
