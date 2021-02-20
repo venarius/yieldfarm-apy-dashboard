@@ -1,17 +1,32 @@
 import BigNumber from 'bignumber.js'
+
 import erc20 from '../config/abi/erc20'
 import masterchefABI from '../config/abi/masterchef'
 import { multicall } from './web3'
-import farmsConfig from '../config/constants/farms'
+import { pancake, dankswap } from '../config/constants/farms'
 import { getApyForFarms } from './helpers'
 
 function getAddress(address: any) {
   return address[56]
 }
 
-export async function fetchFarms () {
+export const config = {
+  'pancake': {
+    farms: pancake,
+    masterChef: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+    yieldPerBlock: new BigNumber(40)
+  },
+  'dankswap': {
+    farms: dankswap,
+    masterChef: '0x4923de3EE2c525F3A6086B90d78630F8D9634223',
+    yieldPerBlock: new BigNumber(2.1)
+  }
+}
+
+export async function fetchFarms (provider: keyof typeof config) {
   const data = await Promise.all(
-    farmsConfig.map(async (farmConfig) => {
+    // @ts-ignore
+    config[provider].farms.map(async (farmConfig: any) => {
       const lpAdress = getAddress(farmConfig.lpAddresses)
       const calls = [
         // Balance of token in the LP contract
@@ -30,7 +45,7 @@ export async function fetchFarms () {
         {
           address: lpAdress,
           name: 'balanceOf',
-          params: ['0x73feaa1eE314F8c655E354234017bE2193C9E24E'],
+          params: [config[provider].masterChef],
         },
         // Total supply of LP tokens
         {
@@ -101,5 +116,5 @@ export async function fetchFarms () {
     }),
   )
 
-  return getApyForFarms(data)
+  return getApyForFarms(data, config[provider].yieldPerBlock)
 }

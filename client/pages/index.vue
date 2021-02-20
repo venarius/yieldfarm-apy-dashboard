@@ -3,16 +3,18 @@
     <loader />
     <div v-if="!isLoading">
       <p class="text-xl text-gray-600 favorites-title">{{ $t('favoritesTitle') }}</p>
-      <div :class="{ 'py-24 bg-gray-200 rounded-lg w-full favorites': favorites.length === 0 }">
-        <p v-if="favorites.length === 0" class="text-center text-gray-600 font-light">{{ $t('favoritesEmpty') }}</p>
+      <div :class="{ 'py-24 bg-gray-200 rounded-lg w-full favorites': favoriteAPYs.length === 0 }">
+        <p v-if="favoriteAPYs.length === 0" class="text-center text-gray-600 font-light">{{ $t('favoritesEmpty') }}</p>
 
         <div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
           <apy-card v-for="apy in favoriteAPYs" :key="`favorite${apy.pid}`" :apy="apy" :history="historyData.filter(h => h.lp === apy.lpSymbol)" />
         </div>
       </div>
 
+      <provider-select class="mt-8 mb-2" />
+
       <!-- Search & Sort -->
-      <div class="flex mb-2 mt-8">
+      <div class="flex mb-2">
         <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar bg-gray-300 text-gray-900">
         
         <Dropdown class="sort-dropdown ml-2">
@@ -90,11 +92,22 @@ export default Vue.extend({
     isLoading (): boolean {
       return this.$store.state.apy.isLoading
     },
-    favorites (): number[] {
+    favorites (): string[] {
       return this.$store.state.apy.favorites
     },
     favoriteAPYs (): any[] {
-      return this.APYs.filter(a => this.favorites.includes(a.pid))
+      return this.APYs.filter(a => this.favorites.includes(`${this.selectedProvider}:${a.pid}`))
+    },
+    selectedProvider (): string {
+      return this.$store.state.apy.selectedProvider
+    }
+  },
+  watch: {
+    async selectedProvider () {
+      this.$store.commit('apy/setIsLoading', true)
+      const apys: any[] = await fetchAPYs(this.$store.state.apy.selectedProvider)
+      this.$store.commit('apy/setAPYs', apys)
+      this.$store.commit('apy/setIsLoading', false)
     }
   },
   async mounted () {
@@ -102,7 +115,7 @@ export default Vue.extend({
     const dat = await response.json()
     this.historyData = dat.history
 
-    const apys: any[] = await fetchAPYs()
+    const apys: any[] = await fetchAPYs(this.$store.state.apy.selectedProvider)
     this.$store.commit('apy/setAPYs', apys)
     this.$store.commit('apy/setIsLoading', false)
   }

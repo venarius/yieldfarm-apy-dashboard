@@ -62,5 +62,6 @@ export default {
   NYA: 'nyanswop',
   BROOBEE: 'roobee',
   BAKE: 'bakeryswap',
-  BURGER: 'burgerswap'
+  BURGER: 'burgerswap',
+  WEED: 'dankswap'
 }

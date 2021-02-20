@@ -2,6 +2,7 @@ export const state = () => ({
   isLoading: true,
   APYs: [],
   darkModeActive: false,
+  selectedProvider: 'pancake',
   favorites: localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : []
 })
 
@@ -23,5 +24,8 @@ export const mutations = {
     }
 
     localStorage.setItem('favorites', JSON.stringify(state.favorites))
+  },
+  setSelectedProvider (state, provider) {
+    state.selectedProvider = provider
   }
 }

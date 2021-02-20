@@ -197,7 +197,7 @@ export default Vue.extend({
   },
   methods: {
     favorite () {
-      this.$store.commit('apy/favorite', this.apy.pid)
+      this.$store.commit('apy/favorite', `${this.$store.state.apy.selectedProvider}:${this.apy.pid}`)
     }
   }
 })

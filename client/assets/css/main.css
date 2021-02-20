@@ -62,10 +62,18 @@ input[type=number] {
   color: white;
 }
 
-.app.dark .apy-card, .app.dark .searchbar, .app.dark .provider-select div {
+.app.dark .apy-card, .app.dark .searchbar, .app.dark .provider-select .provider {
   background: rgb(50, 53, 70);
   border-color: rgb(50, 53, 70) !important;
   color: white;
+}
+
+.app.dark .provider-select .provider.text-blue-500 {
+  background: rgb(84, 89, 117);
+}
+
+.app.dark .provider-select .active-dot {
+  background: white;
 }
 
 .app.dark .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {

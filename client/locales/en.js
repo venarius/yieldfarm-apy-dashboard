@@ -25,5 +25,9 @@ export default {
     nameDesc: 'Name descending',
     totalAsc: 'Total ascending',
     totalDesc: 'Total descending'
+  },
+  providers: {
+    pancake: 'PancakeSwap',
+    dankswap: 'DankSwap'
   }
 }
