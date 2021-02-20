@@ -1,0 +1,44 @@
+.sweet-modal-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.sweet-modal {
+  @apply rounded-lg !important;
+}
+
+.sweet-action-close {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.sweet-modal .sweet-box-actions .sweet-action-close:hover {
+  background-color: #ed64a6 !important;
+}
+
+@media (max-width: 767px) {
+  .sweet-modal { border-radius: 0 !important; }
+  .sweet-content { padding: 4rem 1rem 1rem 1rem !important; }
+}
+
+.app.dark .sweet-modal {
+  background-color: rgb(23, 23, 26);
+}
+
+.app.dark .sweet-title {
+  border-bottom: 1px solid  rgb(50, 53, 70);
+}
+
+.app.dark .sweet-action-close {
+  color: rgb(97, 103, 136) !important;
+}
+
+.app.dark .sweet-action-close:hover {
+  color: white !important;
+}
+
+.app.dark .sweet-modal input {
+  background: rgb(50, 53, 70);
+  border-color: rgb(50, 53, 70) !important;
+  color: white;
+}

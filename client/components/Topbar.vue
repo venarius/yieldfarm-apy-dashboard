@@ -1,7 +1,7 @@
 <template>
   <div class="topbar">
     <div class="px-4 py-2 bg-white border-b border-gray-300 flex items-center justify-between">
-      <p class="text-xs text-gray-700 font-light hidden xs:block">{{ $t('madeWithLove') }}</p>
+      <p class="text-xs text-gray-700 font-light hidden sm:block">{{ $t('madeWithLove') }}</p>
       <p class="text-xs text-gray-700 font-light">{{ $t('nextRefresh', { seconds: timer }) }}</p>
     </div>
     <div class="p-4 bg-white border-b border-gray-300 flex items-center justify-between">

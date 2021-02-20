@@ -13,5 +13,9 @@ export default {
   yearDays: '365d',
   searchPlaceholder: 'Search...',
   favoritesTitle: 'Your Favorites',
-  favoritesEmpty: 'farms marked as favorite will appear here'
+  favoritesEmpty: 'farms marked as favorite will appear here',
+  earn: 'Earn:',
+  calcInvestment: 'Investment ($)',
+  calcDuration: 'Duration (Days)',
+  calcReturn: 'Est. Return:'
 }

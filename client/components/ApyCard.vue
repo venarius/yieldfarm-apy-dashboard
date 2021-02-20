@@ -1,5 +1,22 @@
 <template>
   <div class="border bg-white p-4 shadow-lg rounded-lg apy-card hover:shadow-2xl transition duration-200" style="border-color: #eaeaea;">
+
+    <!-- Calculator Modal -->
+    <sweet-modal ref="calculatorModal" title="ROI Calculator">
+      <div class="flex">
+        <div class="flex-1">
+          <p>{{ $t('calcInvestment') }}</p>
+          <input v-model="calculatorInvestment" type="number" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
+        </div>
+        <div class="flex-1 ml-3">
+          <p>{{ $t('calcDuration') }}</p>
+          <input v-model="calculatorDuration" type="number" class="p-1 rounded bg-gray-300 text-gray-900 w-full" />
+        </div>
+      </div>
+      <p class="mt-3 text-2xl text-right font-bold">{{ $t('calcReturn') }} <span class="text-pink-500">~{{ estReturnCalculator }} {{ apy.earnSymbol }}</span></p>
+    </sweet-modal>
+    <!-- Calculator Modal END -->
+
     <div>
       <div class="flex items-start justify-between">
         <div class="flex items-center">
@@ -62,9 +79,10 @@
           </tippy>
           <!-- ROI Tippy END -->
 
-          <i class="fas fa-calculator ml-1 cursor-pointer"></i>
+          <i class="fas fa-calculator ml-1 cursor-pointer" @click="$refs.calculatorModal.open()"></i>
         </div>
 
+        <p>{{ $t('earn') }} {{ apy.earnSymbol }}</p>
         <p>{{ $t('total') }} {{ parseInt(apy.tokenAmount).toFixed(2) }}</p>
         <p>{{ $t('totalInQuote') }} {{ parseInt(apy.quoteTokenAmount).toFixed(2) }}</p>
       </div>
@@ -82,6 +100,9 @@
 import Vue, { PropOptions } from 'vue'
 import { RepeatIcon, InfoIcon, StarIcon } from 'vue-feather-icons'
 
+// @ts-ignore
+import { SweetModal } from 'sweet-modal-vue'
+
 import { lpSymbolToImage } from '../helpers'
 import { calculateEarnedPerThousandDollars, apyModalRoi } from '../apy/helpers'
 
@@ -89,7 +110,8 @@ export default Vue.extend({
   components: {
     RepeatIcon,
     InfoIcon,
-    StarIcon
+    StarIcon,
+    SweetModal
   },
   props: {
     apy: {
@@ -104,7 +126,9 @@ export default Vue.extend({
   data () {
     return {
       apyModalRoi,
-      localHistory: []
+      localHistory: [],
+      calculatorInvestment: 1000,
+      calculatorDuration: 7
     }
   },
   mounted () {
@@ -126,6 +150,10 @@ export default Vue.extend({
     },
     isFavorite (): boolean {
       return this.$store.state.apy.favorites.includes(this.apy.pid)
+    },
+    estReturnCalculator (): string {
+      const calc = calculateEarnedPerThousandDollars({ numberOfDays: this.calculatorDuration, farmApy: this.apy.apy, price: this.price })
+      return apyModalRoi({ amountEarned: calc, amountInvested: this.calculatorInvestment / this.price })
     },
     earnedPerThousand1D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 1, farmApy: this.apy.apy, price: this.price }) },
     earnedPerThousand7D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 7, farmApy: this.apy.apy, price: this.price }) },

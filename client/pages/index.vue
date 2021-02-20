@@ -13,7 +13,7 @@
 
       <!-- Search & Sort -->
       <div class="flex mb-2 mt-8">
-        <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar">
+        <input v-model="search" type="text" :placeholder="$t('searchPlaceholder')" class="text-input searchbar bg-gray-300 text-gray-900">
       </div>
       <!-- Search & Sort END -->
 

@@ -1,10 +1,15 @@
 @import '~/node_modules/flag-icon-css/css/flag-icon.min.css';
 @import './dropdown.css';
 @import './tippy.css';
+@import './modal.css';
 
 html, body {
   font-family: 'Kanit', sans-serif;
   user-select: none;
+}
+
+*:focus {
+  @apply outline-none
 }
 
 .app {
@@ -21,6 +26,16 @@ html, body {
 
 .text-input {
   @apply w-full border-2 border-gray-300 rounded p-1 px-2
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* App Dark */
