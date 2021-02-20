@@ -48,6 +48,6 @@ export function getApyForFarms (farms: any, yield_per_block: BigNumber): any[] {
       apy = price.div(ethPriceUsd).times(rewardPerYear).div(farm.lpTotalInQuoteToken)
     }
 
-    return { ...farm, ...{ apy: apy.times(new BigNumber(100)).toNumber().toLocaleString('en-US').slice(0, -1), basePrice: basePrice } }
+    return { ...farm, ...{ apy: (apy.times(new BigNumber(100)).toNumber() || 0), basePrice: basePrice } }
   })
 }

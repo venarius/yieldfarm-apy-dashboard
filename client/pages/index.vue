@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <provider-select class="mt-8 mb-2" />
+      <provider-select class="mt-8" />
 
       <!-- Search & Sort -->
       <div class="flex mb-2">
@@ -56,9 +56,10 @@ export default Vue.extend({
     APYs (): any[] {
       let apys = [...this.$store.state.apy.APYs]
 
+      console.log(apys)
       switch (this.sortDir) {
         case 'apyAsc':
-        case 'apyDesc': { apys = apys.sort((a: any, b: any) => a.apy.localeCompare(b.apy, 'en', { numeric: true })); break }
+        case 'apyDesc': { apys = apys.sort((a: any, b: any) => a.apy.toString().localeCompare(b.apy.toString(), 'en', {numeric: true})); break }
         case 'nameAsc':
         case 'nameDesc': { apys = apys.sort((a: any, b: any) => a.lpSymbol.localeCompare(b.lpSymbol)); break }
         case 'totalAsc':

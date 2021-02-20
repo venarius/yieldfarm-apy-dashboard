@@ -41,7 +41,7 @@
     <div class="mt-2">
       <div>
         <div class="flex items-center text-pink-500">
-          <p class="font-semibold text-xl">{{ $t('apy') }} {{ apy.apy ? apy.apy : '--' }}%</p>
+          <p class="font-semibold text-xl">{{ $t('apy') }} {{ apy.apy > -1 ? apy.apy.toFixed(2) : '--' }}%</p>
 
           <!-- ROI Tippy -->
           <tippy>
