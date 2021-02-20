@@ -19,7 +19,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data () {
     return {
-      availableProviders: ['pancake', 'dankswap']
+      availableProviders: ['pancake', 'dankswap', 'kiwifinance']
     }
   },
   computed: {

@@ -63,5 +63,7 @@ export default {
   BROOBEE: 'roobee',
   BAKE: 'bakeryswap',
   BURGER: 'burgerswap',
-  WEED: 'dankswap'
+  WEED: 'dankswap',
+  KIWI: 'kiwiswap',
+  CHS: 'cheeseswap'
 }

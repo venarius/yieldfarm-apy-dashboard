@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js'
 import erc20 from '../config/abi/erc20'
 import masterchefABI from '../config/abi/masterchef'
 import { multicall } from './web3'
-import { pancake, dankswap } from '../config/constants/farms'
+import { pancake, dankswap, kiwifinance } from '../config/constants/farms'
 import { getApyForFarms } from './helpers'
 
 function getAddress(address: any) {
@@ -20,6 +20,11 @@ export const config = {
     farms: dankswap,
     masterChef: '0x4923de3EE2c525F3A6086B90d78630F8D9634223',
     yieldPerBlock: new BigNumber(2.1)
+  },
+  'kiwifinance': {
+    farms: kiwifinance,
+    masterChef: '0x2fE9263BF105095e16167C093C4d28140e936E1b',
+    yieldPerBlock: new BigNumber(0.020)
   }
 }
 

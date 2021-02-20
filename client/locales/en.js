@@ -28,6 +28,7 @@ export default {
   },
   providers: {
     pancake: 'PancakeSwap',
-    dankswap: 'DankSwap'
+    dankswap: 'DankSwap',
+    kiwifinance: 'KiwiFinance'
   }
 }
