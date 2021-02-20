@@ -11,7 +11,10 @@
             <img :src="`https://bscscan.com/${token2Image}`" style="height:32px;width:32px;">
           </div>
         </div>
-        <star-icon class="text-gray-600" />
+        <div class="cursor-pointer" @click="favorite()">
+          <i v-if="isFavorite" class="fas fa-star fa-lg text-yellow-500"></i>
+          <i v-else class="far fa-star fa-lg text-gray-600"></i>
+        </div>
       </div>
       <div class="flex items-center mt-2">
         <a class="text-xl ml-1 underline" target="_blank" :href="`https://exchange.pancakeswap.finance/#/add/ETH/${apy.address}`">{{ apy.lpSymbol }}</a>
@@ -121,6 +124,9 @@ export default Vue.extend({
     token2Image (): string {
       return lpSymbolToImage(this.apy.lpSymbol, 1)
     },
+    isFavorite (): boolean {
+      return this.$store.state.apy.favorites.includes(this.apy.pid)
+    },
     earnedPerThousand1D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 1, farmApy: this.apy.apy, price: this.price }) },
     earnedPerThousand7D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 7, farmApy: this.apy.apy, price: this.price }) },
     earnedPerThousand30D (): number { return calculateEarnedPerThousandDollars({ numberOfDays: 30, farmApy: this.apy.apy, price: this.price }) },
@@ -157,6 +163,11 @@ export default Vue.extend({
           categories: this.localHistory.map((h: any) => new Date(h.date).toLocaleDateString()),
         }
       }
+    }
+  },
+  methods: {
+    favorite () {
+      this.$store.commit('apy/favorite', this.apy.pid)
     }
   }
 })

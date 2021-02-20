@@ -3,8 +3,12 @@
     <loader />
     <div v-if="!isLoading">
       <p class="text-xl text-gray-600 favorites-title">{{ $t('favoritesTitle') }}</p>
-      <div class="rounded-lg bg-gray-200 w-full py-24 favorites">
-        <p class="text-center text-gray-600 font-light">{{ $t('favoritesEmpty') }}</p>
+      <div :class="{ 'py-24 bg-gray-200 rounded-lg w-full favorites': favorites.length === 0 }">
+        <p v-if="favorites.length === 0" class="text-center text-gray-600 font-light">{{ $t('favoritesEmpty') }}</p>
+
+        <div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+          <apy-card v-for="(apy, index) in favoriteAPYs" :key="index" :apy="apy" :history="historyData.filter(h => h.lp === apy.lpSymbol)" />
+        </div>
       </div>
 
       <!-- Search & Sort -->
@@ -54,10 +58,16 @@ export default Vue.extend({
     },
     isLoading (): boolean {
       return this.$store.state.apy.isLoading
+    },
+    favorites (): number[] {
+      return this.$store.state.apy.favorites
+    },
+    favoriteAPYs (): any[] {
+      return this.APYs.filter(a => this.favorites.includes(a.pid))
     }
   },
   async mounted () {
-    const response = await fetch('//localhost:8080/history')
+    const response = await fetch('//192.168.0.148:8080/history')
     const dat = await response.json()
     this.historyData = dat.history
 

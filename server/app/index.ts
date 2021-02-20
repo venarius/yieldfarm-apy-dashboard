@@ -9,7 +9,7 @@ async function start () {
   await startDatabase()
 
   // do fetching
-  setInterval(async () => { (await fetchAPYs()).forEach(apy => saveApy(apy)) }, 60_000)
+  setInterval(async () => { (await fetchAPYs()).forEach(apy => saveApy(apy)) }, 300_000)
 
   const app = new Koa()
   const router = new Router()

@@ -1,7 +1,8 @@
 export const state = () => ({
   isLoading: true,
   APYs: [],
-  darkModeActive: false
+  darkModeActive: false,
+  favorites: localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : []
 })
 
 export const mutations = {
@@ -13,5 +14,14 @@ export const mutations = {
   },
   setDarkModeActive (state, bool) {
     state.darkModeActive = bool
+  },
+  favorite (state, apy) {
+    if (state.favorites.includes(apy)) {
+      state.favorites = state.favorites.filter(f => f !== apy)
+    } else {
+      state.favorites.push(apy)
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(state.favorites))
   }
 }
