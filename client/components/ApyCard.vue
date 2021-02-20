@@ -83,8 +83,8 @@
         </div>
 
         <p>{{ $t('earn') }} {{ apy.earnSymbol }}</p>
-        <p>{{ $t('total') }} {{ parseInt(apy.tokenAmount).toFixed(2) }}</p>
-        <p>{{ $t('totalInQuote') }} {{ parseInt(apy.quoteTokenAmount).toFixed(2) }}</p>
+        <p>{{ $t('total') }} {{ parseInt(apy.tokenAmount).toFixed(2) }} {{ token1 }}</p>
+        <p>{{ $t('totalInQuote') }} {{ parseInt(apy.quoteTokenAmount).toFixed(2) }} {{ token1 }}</p>
       </div>
 
       <!-- Chart -->
@@ -142,6 +142,8 @@ export default Vue.extend({
     oneThousandDollarsWorth (): number {
       return 1000 / this.price
     },
+    token1 (): string { return this.apy.lpSymbol.split('-')[0] },
+    token2 (): string { return this.apy.lpSymbol.split('-')[1].split(' ')[0] },
     token1Image (): string {
       return lpSymbolToImage(this.apy.lpSymbol, 0)
     },

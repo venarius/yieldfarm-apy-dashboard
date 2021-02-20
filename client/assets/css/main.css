@@ -8,8 +8,8 @@ html, body {
   user-select: none;
 }
 
-*:focus {
-  @apply outline-none
+*:focus, *:active {
+  outline: 0 !important;
 }
 
 .app {

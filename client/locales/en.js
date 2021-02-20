@@ -1,7 +1,7 @@
 export default {
   apy: 'APY:',
   total: 'Total:',
-  totalInQuote: 'Total in quote:',
+  totalInQuote: 'Total In Quote:',
   madeWithLove: 'Made with ❤️ for Binance Hackathon: The Future is now',
   nextRefresh: 'Next refresh: %{seconds} sec(s)',
   title: 'YieldFarm Dashboard',
@@ -17,5 +17,13 @@ export default {
   earn: 'Earn:',
   calcInvestment: 'Investment ($)',
   calcDuration: 'Duration (Days)',
-  calcReturn: 'Est. Return:'
+  calcReturn: 'Est. Return:',
+  sorting: {
+    apyAsc: 'APY ascending',
+    apyDesc: 'APY descending',
+    nameAsc: 'Name ascending',
+    nameDesc: 'Name descending',
+    totalAsc: 'Total ascending',
+    totalDesc: 'Total descending'
+  }
 }
