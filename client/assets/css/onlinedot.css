@@ -1,0 +1,22 @@
+.online-dot {
+  margin-top: 2px;
+  height: 0.65rem;
+  width: 0.65rem;
+}
+
+.online-dot .dot, .online-dot .pulse-dot {
+  height: 0.65rem;
+  width: 0.65rem;
+  background-color: rgb(0, 209, 0);
+  border-radius: 100%;
+}
+
+.online-dot .pulse-dot {
+  animation: 3s pulse linear infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1 }
+  85% { transform: scale(1); opacity: 1 }
+  100% { transform: scale(2.5); opacity: 0 }
+}

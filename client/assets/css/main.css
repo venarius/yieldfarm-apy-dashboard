@@ -2,6 +2,7 @@
 @import './dropdown.css';
 @import './tippy.css';
 @import './modal.css';
+@import './onlinedot.css';
 
 html, body {
   font-family: 'Kanit', sans-serif;
