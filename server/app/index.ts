@@ -1,5 +1,6 @@
 import Koa from 'koa'
 import Router from 'koa-router'
+import cors from '@koa/cors'
 
 import  { startDatabase, getApys, saveApy } from './database'
 import { fetchAPYs } from './apy/fetcher'
@@ -24,11 +25,12 @@ async function start () {
   })
 
   app
+    .use(cors())
     .use(router.routes())
     .use(router.allowedMethods())
     .listen(8080)
 
-  console.log('server listening on ::3000')
+  console.log('server listening on ::8080')
 }
 
 start()

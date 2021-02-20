@@ -13,10 +13,12 @@
   "dependencies": {
     "@ethersproject/abi": "^5.0.12",
     "@nuxt/typescript-runtime": "^2.0.1",
+    "apexcharts": "^3.25.0",
     "bignumber.js": "^9.0.1",
     "core-js": "^3.8.3",
     "flag-icon-css": "^3.5.0",
     "nuxt": "^2.14.12",
+    "vue-apexcharts": "^1.6.0",
     "vue-feather-icons": "^5.1.0",
     "vue-i18n": "^8.22.4",
     "vue-tippy": "^4.7.3",

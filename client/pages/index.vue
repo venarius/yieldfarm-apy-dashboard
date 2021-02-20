@@ -10,7 +10,7 @@
       </div>
       <!-- Search & Sort END -->
 
-      <apy-card v-for="(apy, index) in APYs" :key="index" :apy="apy" class="mb-2" />
+      <apy-card v-for="(apy, index) in APYs" :key="index" :apy="apy" :history="historyData" class="mb-2" />
     </div>
   </div>
 </template>
@@ -24,7 +24,8 @@ import { fetchAPYs } from '../apy/fetcher'
 export default Vue.extend({
   data () {
     return {
-      search: ''
+      search: '',
+      historyData: []
     }
   },
   computed: {
@@ -52,6 +53,10 @@ export default Vue.extend({
     const apys: any[] = await fetchAPYs()
     this.$store.commit('apy/setAPYs', apys)
     this.$store.commit('apy/setIsLoading', false)
+
+    const response = await fetch('//localhost:8080/history')
+    const dat = await response.json()
+    this.historyData = dat.history
   }
 })
 </script>
