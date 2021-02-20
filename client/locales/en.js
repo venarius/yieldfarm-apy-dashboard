@@ -4,7 +4,7 @@ export default {
   totalInQuote: 'Total In Quote:',
   madeWithLove: 'Made with ❤️ for Binance Hackathon: The Future is now',
   nextRefresh: 'Next refresh: %{seconds} sec(s)',
-  title: 'YieldFarm Dashboard',
+  title: 'BSC Yieldfarming',
   apyListTitle: 'APY live dashboard',
   tokenROI: 'Token ROI',
   oneDay: '1d',

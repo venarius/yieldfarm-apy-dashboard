@@ -26,3 +26,28 @@
 .sort-active {
   @apply bg-blue-100 rounded mx-1 text-blue-600 !important
 }
+
+/* Dark Mode */
+.app.dark .sort-dropdown button {
+  background: rgb(50, 53, 70);
+  border-color: rgb(50, 53, 70) !important;
+  color: white;
+}
+
+.app.dark .sort-dropdown button i {
+  color: white;
+}
+
+.app.dark .dropdown-menu, .app.dark .dropdown-item {
+  background: rgb(89, 95, 124);
+  border-color: rgb(50, 53, 70) !important;
+  color: white;
+}
+
+.app.dark .dropdown-item:hover {
+  background: rgb(123, 131, 172);
+}
+
+.app.dark .sort-active {
+  @apply bg-pink-600 text-white !important
+}

@@ -52,10 +52,14 @@ input[type=number] {
   background: linear-gradient(rgb(34, 37, 49) 0%, rgba(34, 37, 49, 0) 413px);
 }
 
-.app.dark .topbar, .app.dark .topbar * {
+.app.dark .topbar, .app.dark .topbar .bar {
   color: white;
   background-color: rgb(23, 23, 26);
   border-color: #40424e;
+}
+
+.app.dark .made-with-love, .app.dark .next-refresh, .app.dark .darkmode {
+  color: white;
 }
 
 .app.dark .apy-card, .app.dark .searchbar, .app.dark .provider-select div {

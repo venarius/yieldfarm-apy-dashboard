@@ -1,16 +1,16 @@
 <template>
   <div class="topbar">
-    <div class="px-4 py-2 bg-white border-b border-gray-300 flex items-center justify-between">
-      <p class="text-xs text-gray-700 font-light hidden sm:block">{{ $t('madeWithLove') }}</p>
+    <div class="bar px-4 py-2 bg-white border-b border-gray-300 flex items-center justify-between">
+      <p class="text-xs text-gray-700 font-light hidden sm:block made-with-love">{{ $t('madeWithLove') }}</p>
       <div class="flex items-center">
-        <p class="text-xs text-gray-700 font-light">{{ $t('nextRefresh', { seconds: timer }) }}</p>
+        <p class="text-xs text-gray-700 font-light next-refresh">{{ $t('nextRefresh', { seconds: timer }) }}</p>
         <div class="online-dot ml-2 relative">
           <div class="dot absolute inset-0" />
           <div class="pulse-dot absolute inset-0" />
         </div>
       </div>
     </div>
-    <div class="p-4 bg-white border-b border-gray-300 flex items-center justify-between">
+    <div class="bar p-4 bg-white border-b border-gray-300 flex items-center justify-between">
       <p class="text-xl font-bold">{{ $t('title') }}</p>
       <div class="flex items-center">
         <language-selector />

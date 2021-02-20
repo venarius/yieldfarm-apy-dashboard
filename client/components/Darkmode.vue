@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-600 cursor-pointer" @click="toggleDarkmode()">
+  <div class="text-gray-600 cursor-pointer darkmode" @click="toggleDarkmode()">
     <sun-icon v-if="darkModeActive" />
     <moon-icon v-else />
   </div>

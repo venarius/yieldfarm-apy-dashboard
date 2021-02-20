@@ -4,7 +4,7 @@
       <slot class="mr-1" name="selected" />
       <svg class="fill-current h-4 w-4 ml-auto dropdown-icon" :class="{ open: showDropdown }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
     </button>
-    <ul class="dropdown-menu absolute text-gray-700 pt-1 z-10 right-0 min-w-full shadow-lg border border-gray-300 bg-white" :class="{ hidden: !showDropdown }">
+    <ul class="dropdown-menu absolute text-gray-700 py-1 z-10 right-0 min-w-full shadow-lg border border-gray-300 bg-white rounded mt-1" :class="{ hidden: !showDropdown }">
       <slot name="items" />
     </ul>
   </div>
