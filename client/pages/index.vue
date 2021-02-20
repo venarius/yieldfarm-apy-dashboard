@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto px-2 md:px-0">
     <loader />
     <div v-if="!isLoading">
       <p class="text-xl text-gray-600 favorites-title">{{ $t('favoritesTitle') }}</p>
@@ -13,7 +13,7 @@
       </div>
       <!-- Search & Sort END -->
 
-      <div class="grid grid-cols-3 gap-3">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
         <apy-card v-show="searchPIDs.length === 0 || searchPIDs.includes(apy.pid)" v-for="(apy, index) in APYs" :key="index" :apy="apy" :history="historyData.filter(h => h.lp === apy.lpSymbol)" />
       </div>
     </div>
